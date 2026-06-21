@@ -1,5 +1,5 @@
 /* =====================================
-   MAP SECTION
+   CLEAN MAP SECTION
 ===================================== */
 
 .map-section{
@@ -40,108 +40,9 @@
         0 24px 80px rgba(0,0,0,.38);
 }
 
-.map-header{
+.clean-map-shell{
 
-    position:absolute;
-
-    z-index:900;
-
-    top:22px;
-
-    left:22px;
-
-    right:22px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:18px;
-
-    pointer-events:none;
-}
-
-.map-title{
-
-    pointer-events:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    padding:
-        14px 18px;
-
-    border-radius:22px;
-
-    background:
-        rgba(2,8,23,.72);
-
-    border:
-        1px solid rgba(55,245,214,.14);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        0 14px 45px rgba(0,0,0,.32);
-}
-
-.map-title img{
-
-    width:30px;
-
-    height:30px;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(55,245,214,.75)
-        );
-}
-
-.map-title div{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:3px;
-}
-
-.map-title strong{
-
-    color:white;
-
-    font-size:1rem;
-
-    font-weight:900;
-}
-
-.map-title span{
-
-    color:var(--muted);
-
-    font-size:.8rem;
-
-    font-weight:700;
-}
-
-.map-actions{
-
-    pointer-events:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
+    min-height:720px;
 }
 
 /* =====================================
@@ -156,14 +57,12 @@
 
     min-height:720px;
 
-    background:
-        #020817;
+    background:#020817;
 }
 
 .leaflet-container{
 
-    background:
-        #020817;
+    background:#020817;
 
     font-family:
         Inter,
@@ -173,7 +72,20 @@
 }
 
 /* =====================================
-   LEAFLET CONTROL RESTYLE
+   HIDE OLD MAP OVERLAYS
+   These are removed from index.html now,
+   but this prevents old cached HTML from showing them.
+===================================== */
+
+.map-header,
+.map-overlay,
+.map-filter-panel{
+
+    display:none !important;
+}
+
+/* =====================================
+   LEAFLET ZOOM CONTROLS
 ===================================== */
 
 .leaflet-control-zoom{
@@ -186,11 +98,11 @@
 
 .leaflet-control-zoom a{
 
-    width:42px !important;
+    width:48px !important;
 
-    height:42px !important;
+    height:48px !important;
 
-    line-height:42px !important;
+    line-height:48px !important;
 
     background:
         rgba(7,19,41,.92) !important;
@@ -198,20 +110,194 @@
     color:var(--accent) !important;
 
     border:
-        1px solid rgba(55,245,214,.14) !important;
+        1px solid rgba(55,245,214,.16) !important;
 
-    font-size:1.35rem !important;
+    font-size:1.45rem !important;
 
     font-weight:900 !important;
+
+    text-shadow:
+        0 0 12px rgba(55,245,214,.65) !important;
 }
 
 .leaflet-control-zoom a:hover{
+
+    background:
+        rgba(55,245,214,.14) !important;
+
+    color:white !important;
+}
+
+/* =====================================
+   LEAFLET LAYER CONTROL
+===================================== */
+
+.leaflet-control-layers{
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    overflow:hidden !important;
+
+    background:
+        rgba(7,19,41,.92) !important;
+
+    border:
+        1px solid rgba(55,245,214,.16) !important;
+
+    box-shadow:
+        0 14px 40px rgba(0,0,0,.38) !important;
+
+    backdrop-filter:
+        blur(14px);
+}
+
+.leaflet-control-layers-toggle{
+
+    width:48px !important;
+
+    height:48px !important;
+
+    background-color:
+        rgba(7,19,41,.92) !important;
+
+    filter:
+        invert(1)
+        drop-shadow(
+            0 0 8px
+            rgba(55,245,214,.6)
+        );
+}
+
+.leaflet-control-layers-expanded{
+
+    padding:14px !important;
+
+    color:white !important;
+}
+
+.leaflet-control-layers label{
+
+    color:#cbd5e1 !important;
+
+    font-size:.9rem !important;
+
+    font-weight:700 !important;
+
+    margin-bottom:8px !important;
+}
+
+.leaflet-control-layers input{
+
+    accent-color:
+        var(--accent);
+}
+
+/* =====================================
+   GEOCODER CONTROL
+===================================== */
+
+.leaflet-control-geocoder{
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    overflow:hidden !important;
+
+    background:
+        rgba(7,19,41,.92) !important;
+
+    border:
+        1px solid rgba(55,245,214,.16) !important;
+
+    box-shadow:
+        0 14px 40px rgba(0,0,0,.38) !important;
+
+    backdrop-filter:
+        blur(14px);
+}
+
+.leaflet-control-geocoder-icon{
+
+    width:48px !important;
+
+    height:48px !important;
+
+    background-color:
+        rgba(7,19,41,.92) !important;
+
+    border:none !important;
+
+    filter:
+        invert(1)
+        drop-shadow(
+            0 0 8px
+            rgba(55,245,214,.6)
+        );
+}
+
+.leaflet-control-geocoder-form input{
+
+    height:48px !important;
+
+    min-width:260px !important;
+
+    background:
+        rgba(2,8,23,.96) !important;
+
+    color:white !important;
+
+    border:
+        1px solid rgba(55,245,214,.16) !important;
+
+    outline:none !important;
+
+    padding:
+        0 14px !important;
+
+    font-weight:700 !important;
+}
+
+.leaflet-control-geocoder-form input::placeholder{
+
+    color:#94a3b8 !important;
+}
+
+.leaflet-control-geocoder-alternatives{
+
+    background:
+        rgba(7,19,41,.98) !important;
+
+    color:white !important;
+
+    border:
+        1px solid rgba(55,245,214,.14) !important;
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.38) !important;
+}
+
+.leaflet-control-geocoder-alternatives li{
+
+    color:#cbd5e1 !important;
+
+    padding:
+        10px 12px !important;
+}
+
+.leaflet-control-geocoder-alternatives li:hover{
 
     background:
         rgba(55,245,214,.12) !important;
 
     color:white !important;
 }
+
+/* =====================================
+   ATTRIBUTION
+===================================== */
 
 .leaflet-control-attribution{
 
@@ -232,237 +318,6 @@
 .leaflet-control-attribution a{
 
     color:var(--accent) !important;
-}
-
-/* =====================================
-   GEOCODER RESTYLE
-===================================== */
-
-.leaflet-control-geocoder{
-
-    border:none !important;
-
-    border-radius:18px !important;
-
-    overflow:hidden !important;
-
-    background:
-        rgba(7,19,41,.92) !important;
-
-    box-shadow:
-        0 14px 40px rgba(0,0,0,.35) !important;
-}
-
-.leaflet-control-geocoder-icon{
-
-    background-color:
-        rgba(7,19,41,.92) !important;
-
-    border:
-        1px solid rgba(55,245,214,.14) !important;
-}
-
-.leaflet-control-geocoder-form input{
-
-    height:42px !important;
-
-    background:
-        rgba(2,8,23,.92) !important;
-
-    color:white !important;
-
-    border:
-        1px solid rgba(55,245,214,.14) !important;
-
-    outline:none !important;
-}
-
-.leaflet-control-geocoder-alternatives{
-
-    background:
-        rgba(7,19,41,.96) !important;
-
-    color:white !important;
-
-    border:
-        1px solid rgba(55,245,214,.14) !important;
-}
-
-.leaflet-control-geocoder-alternatives li:hover{
-
-    background:
-        rgba(55,245,214,.12) !important;
-}
-
-/* =====================================
-   MAP OVERLAY PANELS
-===================================== */
-
-.map-overlay{
-
-    position:absolute;
-
-    z-index:850;
-
-    left:22px;
-
-    bottom:22px;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:14px;
-
-    max-width:760px;
-}
-
-.map-stat{
-
-    min-width:180px;
-
-    padding:
-        16px 18px;
-
-    border-radius:20px;
-
-    background:
-        rgba(2,8,23,.72);
-
-    border:
-        1px solid rgba(55,245,214,.13);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        0 14px 45px rgba(0,0,0,.32);
-}
-
-.map-stat span{
-
-    display:block;
-
-    color:var(--muted);
-
-    font-size:.78rem;
-
-    font-weight:800;
-
-    letter-spacing:.08em;
-
-    text-transform:uppercase;
-
-    margin-bottom:8px;
-}
-
-.map-stat strong{
-
-    display:block;
-
-    color:var(--accent);
-
-    font-size:1.05rem;
-
-    font-weight:900;
-}
-
-/* =====================================
-   FILTER PANEL
-===================================== */
-
-.map-filter-panel{
-
-    position:absolute;
-
-    z-index:875;
-
-    right:22px;
-
-    bottom:22px;
-
-    width:320px;
-
-    padding:18px;
-
-    border-radius:24px;
-
-    background:
-        rgba(2,8,23,.78);
-
-    border:
-        1px solid rgba(55,245,214,.13);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        0 14px 45px rgba(0,0,0,.34);
-}
-
-.map-filter-panel h3{
-
-    color:white;
-
-    font-size:1rem;
-
-    font-weight:900;
-
-    margin-bottom:14px;
-}
-
-.filter-list{
-
-    display:grid;
-
-    gap:10px;
-}
-
-.filter-item{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:12px;
-
-    padding:
-        12px 14px;
-
-    border-radius:16px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid rgba(255,255,255,.06);
-}
-
-.filter-label{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:#cbd5e1;
-
-    font-size:.9rem;
-
-    font-weight:800;
-}
-
-.filter-label img{
-
-    width:24px;
-
-    height:24px;
-
-    object-fit:contain;
 }
 
 /* =====================================
@@ -502,6 +357,18 @@
     height:28px;
 
     object-fit:contain;
+}
+
+.love-marker{
+
+    background:
+        rgba(255,204,0,.12);
+
+    border:
+        1px solid rgba(255,204,0,.45);
+
+    box-shadow:
+        0 0 26px rgba(255,204,0,.28);
 }
 
 .radius-center-marker{
@@ -623,7 +490,8 @@
             24px;
     }
 
-    .map-shell{
+    .map-shell,
+    .clean-map-shell{
 
         min-height:620px;
 
@@ -637,56 +505,26 @@
         min-height:620px;
     }
 
-    .map-header{
+    .leaflet-control-zoom a{
 
-        top:16px;
+        width:44px !important;
 
-        left:16px;
+        height:44px !important;
 
-        right:16px;
-
-        flex-direction:column;
-
-        align-items:stretch;
+        line-height:44px !important;
     }
 
-    .map-title{
+    .leaflet-control-layers-toggle,
+    .leaflet-control-geocoder-icon{
 
-        width:100%;
+        width:44px !important;
+
+        height:44px !important;
     }
 
-    .map-actions{
+    .leaflet-control-geocoder-form input{
 
-        width:100%;
-
-        justify-content:space-between;
-    }
-
-    .map-overlay{
-
-        left:16px;
-
-        right:16px;
-
-        bottom:16px;
-
-        max-width:none;
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .map-filter-panel{
-
-        position:relative;
-
-        right:auto;
-
-        bottom:auto;
-
-        width:100%;
-
-        margin-top:18px;
+        min-width:220px !important;
     }
 }
 
@@ -698,7 +536,8 @@
             18px;
     }
 
-    .map-shell{
+    .map-shell,
+    .clean-map-shell{
 
         min-height:560px;
 
@@ -712,34 +551,13 @@
         min-height:560px;
     }
 
-    .map-title{
+    .leaflet-control-geocoder-form input{
 
-        padding:
-            12px 14px;
+        min-width:180px !important;
     }
 
-    .map-title strong{
+    .leaflet-control-attribution{
 
-        font-size:.92rem;
-    }
-
-    .map-title span{
-
-        font-size:.74rem;
-    }
-
-    .map-stat{
-
-        min-width:0;
-
-        padding:
-            14px 16px;
-    }
-
-    .map-filter-panel{
-
-        padding:16px;
-
-        border-radius:22px;
+        font-size:.62rem !important;
     }
 }
