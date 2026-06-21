@@ -1,1 +1,58 @@
-
+{
+    "name": "AgRadius Pro",
+    "short_name": "AgRadius",
+    "description": "FMCSA Agricultural Exemption Radius Tool for calculating and visualizing 150 air-mile agricultural exemption zones.",
+    "start_url": "../",
+    "scope": "../",
+    "display": "standalone",
+    "display_override": [
+        "standalone",
+        "minimal-ui",
+        "browser"
+    ],
+    "orientation": "portrait-primary",
+    "background_color": "#020817",
+    "theme_color": "#37F5D6",
+    "categories": [
+        "navigation",
+        "utilities",
+        "productivity"
+    ],
+    "lang": "en-US",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "../icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "../icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "../icons/maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Open Radius Tool",
+            "short_name": "Radius",
+            "description": "Open the air-mile radius planner.",
+            "url": "../",
+            "icons": [
+                {
+                    "src": "../icons/icon-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ]
+}
