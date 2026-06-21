@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+<defs>
+<filter id="glow">
+<feGaussianBlur stdDeviation="2"/>
+<feMerge>
+<feMergeNode/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+</defs>
+
+<line x1="12" y1="18" x2="52" y2="18"
+stroke="#37F5D6"
+stroke-width="4"
+stroke-linecap="round"
+filter="url(#glow)"
+/>
+
+<line x1="12" y1="32" x2="52" y2="32"
+stroke="#37F5D6"
+stroke-width="4"
+stroke-linecap="round"
+/>
+
+<line x1="12" y1="46" x2="52" y2="46"
+stroke="#37F5D6"
+stroke-width="4"
+stroke-linecap="round"
+/>
+
+</svg>
