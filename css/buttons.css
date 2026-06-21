@@ -1,1 +1,350 @@
+button{
 
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    color:inherit;
+
+    cursor:pointer;
+}
+
+button:focus-visible{
+
+    outline:
+        2px solid var(--accent);
+
+    outline-offset:4px;
+}
+
+/* =====================================
+   NAV BUTTONS
+===================================== */
+
+.nav-btn,
+.menu-btn,
+.notify-btn{
+
+    width:74px;
+
+    height:74px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        rgba(7,19,41,.78);
+
+    border:
+        1px solid rgba(55,245,214,.12);
+
+    box-shadow:
+        inset 0 0 30px rgba(55,245,214,.03),
+        0 0 30px rgba(0,0,0,.28);
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.nav-btn:hover,
+.menu-btn:hover,
+.notify-btn:hover{
+
+    background:
+        rgba(10,28,54,.86);
+
+    border-color:
+        rgba(55,245,214,.35);
+
+    box-shadow:
+        inset 0 0 30px rgba(55,245,214,.08),
+        0 0 34px rgba(55,245,214,.12);
+}
+
+.nav-btn:active,
+.menu-btn:active,
+.notify-btn:active{
+
+    transform:scale(.96);
+}
+
+.nav-btn img,
+.menu-btn img,
+.notify-btn img{
+
+    width:30px;
+
+    height:30px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(55,245,214,.45)
+        );
+}
+
+/* =====================================
+   PRIMARY LOCATION BUTTON
+===================================== */
+
+.location-btn,
+.primary-btn{
+
+    min-height:64px;
+
+    border-radius:22px;
+
+    padding:
+        0 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    background:var(--accent);
+
+    color:#001b18;
+
+    font-size:1.1rem;
+
+    font-weight:900;
+
+    letter-spacing:.01em;
+
+    box-shadow:
+        0 0 30px
+        rgba(55,245,214,.35);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.location-btn:hover,
+.primary-btn:hover{
+
+    background:#4ff8dd;
+
+    box-shadow:
+        0 0 38px
+        rgba(55,245,214,.45);
+}
+
+.location-btn:active,
+.primary-btn:active{
+
+    transform:scale(.97);
+}
+
+.location-btn img,
+.primary-btn img{
+
+    width:30px;
+
+    height:30px;
+
+    object-fit:contain;
+}
+
+/* =====================================
+   SECONDARY BUTTONS
+===================================== */
+
+.secondary-btn{
+
+    min-height:56px;
+
+    border-radius:18px;
+
+    padding:
+        0 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    background:
+        rgba(7,19,41,.78);
+
+    border:
+        1px solid rgba(55,245,214,.14);
+
+    color:#cbd5e1;
+
+    font-weight:800;
+
+    box-shadow:
+        inset 0 0 24px rgba(55,245,214,.04);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
+}
+
+.secondary-btn:hover{
+
+    color:white;
+
+    border-color:
+        rgba(55,245,214,.35);
+
+    box-shadow:
+        inset 0 0 24px rgba(55,245,214,.08),
+        0 0 28px rgba(55,245,214,.10);
+}
+
+.secondary-btn:active{
+
+    transform:scale(.97);
+}
+
+/* =====================================
+   SMALL ICON BUTTONS
+===================================== */
+
+.icon-btn{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        rgba(7,19,41,.72);
+
+    border:
+        1px solid rgba(55,245,214,.12);
+
+    box-shadow:
+        inset 0 0 18px rgba(55,245,214,.04);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.icon-btn:hover{
+
+    border-color:
+        rgba(55,245,214,.35);
+
+    box-shadow:
+        inset 0 0 18px rgba(55,245,214,.08),
+        0 0 22px rgba(55,245,214,.12);
+}
+
+.icon-btn:active{
+
+    transform:scale(.95);
+}
+
+.icon-btn img{
+
+    width:24px;
+
+    height:24px;
+
+    object-fit:contain;
+}
+
+/* =====================================
+   CHIP BUTTONS
+===================================== */
+
+.chip-btn{
+
+    min-height:42px;
+
+    border-radius:999px;
+
+    padding:
+        0 16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    background:
+        rgba(55,245,214,.08);
+
+    border:
+        1px solid rgba(55,245,214,.14);
+
+    color:var(--accent);
+
+    font-size:.85rem;
+
+    font-weight:800;
+
+    letter-spacing:.03em;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.chip-btn:hover{
+
+    background:
+        rgba(55,245,214,.12);
+
+    border-color:
+        rgba(55,245,214,.35);
+}
+
+.chip-btn:active{
+
+    transform:scale(.97);
+}
+
+/* =====================================
+   DISABLED STATE
+===================================== */
+
+button:disabled,
+.disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+}
