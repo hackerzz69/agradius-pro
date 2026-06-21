@@ -10,15 +10,19 @@
 <meta name="theme-color" content="#37F5D6">
 <meta name="description" content="FMCSA Agricultural Exemption Radius Tool">
 
-<!-- LEAFLET -->
+<link rel="manifest" href="pwa/manifest.json">
+
+<!-- LEAFLET CSS -->
 
 <link
-rel="stylesheet"
-href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
 
 <link
-rel="stylesheet"
-href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
+>
 
 <!-- APP CSS -->
 
@@ -29,107 +33,277 @@ href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
 <link rel="stylesheet" href="css/map.css">
 <link rel="stylesheet" href="css/mobile.css">
 
-<link rel="manifest" href="manifest.json">
-
 </head>
 
 <body>
 
-<header class="hero">
+<div id="app">
 
-    <div class="hero-top">
+    <header class="hero">
 
-        <button class="menu-btn">
-            ☰
-        </button>
+        <div class="hero-bg-glow"></div>
 
-        <div class="hero-badge">
+        <nav class="hero-nav" aria-label="Main Navigation">
 
-            <img
-                src="icons/shield.svg"
-                alt="FMCSA">
+            <button class="nav-btn menu-btn" aria-label="Open Menu">
 
-            FMCSA Compliant
+                <img
+                    src="icons/menu.svg"
+                    alt=""
+                >
 
-        </div>
+            </button>
 
-        <button class="notify-btn">
-            🔔
-        </button>
+            <div class="hero-badge">
 
-    </div>
+                <img
+                    src="icons/shield.svg"
+                    alt=""
+                >
 
-    <div class="hero-main">
+                <span>
+                    FMCSA Compliant
+                </span>
 
-        <div class="hero-text">
+            </div>
 
-            <h1>
-                Air Mile
-                <span>Radius Pro</span>
-            </h1>
+            <button class="nav-btn notify-btn" aria-label="Notifications">
 
-            <p>
-                FMCSA Agricultural
-                Exemption Radius Tool
-            </p>
+                <img
+                    src="icons/bell.svg"
+                    alt=""
+                >
 
-        </div>
+                <span class="notify-dot"></span>
 
-        <div class="hero-image">
+            </button>
 
-            <img
-                src="assets/file_000000004d5471fd8d06c56871c6bd31.png"
-                alt="Truck">
+        </nav>
 
-        </div>
+        <section class="hero-main">
 
-    </div>
+            <div class="hero-left">
 
-    <div class="hero-features">
+                <div class="location-tile">
 
-        <div class="feature">
+                    <img
+                        src="icons/gps.svg"
+                        alt=""
+                    >
 
-            <img src="icons/gps.svg">
+                </div>
 
-            <span>
-                Real-Time GPS
-            </span>
+                <div class="hero-copy">
 
-        </div>
+                    <h1>
+                        Air Mile
+                        <span>Radius Pro</span>
+                    </h1>
 
-        <div class="feature">
+                    <p>
+                        FMCSA AG EXEMPTION RADIUS TOOL
+                    </p>
 
-            <img src="icons/shield.svg">
+                </div>
 
-            <span>
-                FMCSA Compliant
-            </span>
+            </div>
 
-        </div>
+            <div class="hero-art">
 
-        <div class="feature">
+                <img
+                    src="assets/usa-map.png"
+                    alt="Lower 48 Map"
+                    class="hero-map"
+                >
 
-            <img src="icons/map.svg">
+                <img
+                    src="assets/truck.png"
+                    alt="Agricultural Hopper Trailer"
+                    class="hero-truck"
+                >
 
-            <span>
-                Interactive Map
-            </span>
+            </div>
 
-        </div>
+        </section>
 
-        <div class="feature">
+        <section class="hero-features" aria-label="Features">
 
-            <img src="icons/route.svg">
+            <div class="feature">
 
-            <span>
-                Route Planning
-            </span>
+                <img
+                    src="icons/gps.svg"
+                    alt=""
+                >
 
-        </div>
+                <div>
+                    <strong>
+                        Real-Time GPS
+                    </strong>
 
-    </div>
+                    <span>
+                        Accurate Location
+                    </span>
+                </div>
 
-</header>
+            </div>
+
+            <div class="feature">
+
+                <img
+                    src="icons/shield.svg"
+                    alt=""
+                >
+
+                <div>
+                    <strong>
+                        FMCSA Compliant
+                    </strong>
+
+                    <span>
+                        Stay Legal
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="feature">
+
+                <img
+                    src="icons/map.svg"
+                    alt=""
+                >
+
+                <div>
+                    <strong>
+                        Interactive Map
+                    </strong>
+
+                    <span>
+                        Explore Freely
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="feature">
+
+                <img
+                    src="icons/route.svg"
+                    alt=""
+                >
+
+                <div>
+                    <strong>
+                        Plan Confidently
+                    </strong>
+
+                    <span>
+                        Drive Smarter
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="hero-status" aria-label="Current Radius Status">
+
+            <div class="status-item">
+
+                <div class="status-dot"></div>
+
+                <div>
+                    <span>
+                        GPS Status
+                    </span>
+
+                    <strong id="gpsStatus">
+                        Active
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="status-divider"></div>
+
+            <div class="status-item">
+
+                <div class="status-icon">
+
+                    <img
+                        src="icons/center.svg"
+                        alt=""
+                    >
+
+                </div>
+
+                <div>
+                    <span>
+                        Center
+                    </span>
+
+                    <strong id="centerCoords">
+                        Waiting for GPS
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="status-divider"></div>
+
+            <div class="status-item">
+
+                <div class="status-icon">
+
+                    <img
+                        src="icons/radius.svg"
+                        alt=""
+                    >
+
+                </div>
+
+                <div>
+                    <span>
+                        Radius
+                    </span>
+
+                    <strong id="radiusDisplay">
+                        150 Air Miles
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                id="locateBtn"
+                class="location-btn"
+                type="button"
+            >
+
+                <img
+                    src="icons/center.svg"
+                    alt=""
+                >
+
+                <span>
+                    My Location
+                </span>
+
+            </button>
+
+        </section>
+
+    </header>
+
+</div>
+
+<!-- LEAFLET JS -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+<!-- APP JS -->
 
 <script src="js/app.js"></script>
 
