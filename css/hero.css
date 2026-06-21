@@ -1,1 +1,196 @@
+.hero{
 
+    position:relative;
+
+    overflow:hidden;
+
+    padding:24px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(55,245,214,.18),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #020817,
+            #071329
+        );
+
+    border-bottom:
+        1px solid rgba(55,245,214,.15);
+}
+
+.hero-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+}
+
+.menu-btn,
+.notify-btn{
+
+    width:56px;
+    height:56px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#071329;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    border:
+        1px solid rgba(55,245,214,.12);
+}
+
+.hero-badge{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:
+        rgba(55,245,214,.08);
+
+    border:
+        1px solid rgba(55,245,214,.15);
+
+    color:#37F5D6;
+
+    font-weight:600;
+}
+
+.hero-main{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:center;
+
+    gap:24px;
+}
+
+.hero-text h1{
+
+    font-size:4rem;
+
+    line-height:.95;
+
+    font-weight:800;
+}
+
+.hero-text span{
+
+    display:block;
+
+    color:#37F5D6;
+}
+
+.hero-text p{
+
+    margin-top:16px;
+
+    color:#94a3b8;
+
+    font-size:1.15rem;
+}
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:flex-end;
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:500px;
+
+    filter:
+        drop-shadow(
+            0 0 30px rgba(55,245,214,.25)
+        );
+}
+
+.hero-features{
+
+    margin-top:32px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#cbd5e1;
+
+    font-size:.95rem;
+}
+
+.feature img{
+
+    width:24px;
+    height:24px;
+}
+
+@media(max-width:900px){
+
+    .hero-main{
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero-image{
+
+        justify-content:center;
+    }
+
+    .hero-text{
+
+        text-align:center;
+    }
+
+    .hero-text h1{
+
+        font-size:3rem;
+    }
+
+    .hero-features{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
