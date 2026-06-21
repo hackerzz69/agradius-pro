@@ -45,7 +45,7 @@
 
         <nav class="hero-nav" aria-label="Main Navigation">
 
-            <button class="nav-btn menu-btn" aria-label="Open Menu">
+            <button class="nav-btn menu-btn" aria-label="Open Menu" type="button">
 
                 <img
                     src="icons/menu.svg"
@@ -67,7 +67,7 @@
 
             </div>
 
-            <button class="nav-btn notify-btn" aria-label="Notifications">
+            <button class="nav-btn notify-btn" aria-label="Notifications" type="button">
 
                 <img
                     src="icons/bell.svg"
@@ -218,7 +218,7 @@
                     </span>
 
                     <strong id="gpsStatus">
-                        Active
+                        Ready
                     </strong>
                 </div>
 
@@ -295,6 +295,115 @@
 
     </header>
 
+    <main>
+
+        <section class="map-section" id="mapSection">
+
+            <div class="map-shell">
+
+                <div class="map-header">
+
+                    <div class="map-title">
+
+                        <img
+                            src="icons/map.svg"
+                            alt=""
+                        >
+
+                        <div>
+                            <strong>
+                                Ag Exemption Map
+                            </strong>
+
+                            <span>
+                                150 air-mile planning radius
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="map-actions">
+
+                        <button
+                            id="installBtn"
+                            class="secondary-btn install-btn"
+                            type="button"
+                            hidden
+                        >
+
+                            <span>
+                                Install App
+                            </span>
+
+                        </button>
+
+                        <button
+                            class="secondary-btn"
+                            type="button"
+                            onclick="window.AgRadiusPro && window.AgRadiusPro.locateUser && window.AgRadiusPro.locateUser()"
+                        >
+
+                            <span>
+                                Use GPS
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="map"
+                    aria-label="AgRadius Pro Interactive Map"
+                ></div>
+
+                <div class="map-overlay">
+
+                    <div class="map-stat">
+
+                        <span>
+                            Radius
+                        </span>
+
+                        <strong>
+                            150 Air Miles
+                        </strong>
+
+                    </div>
+
+                    <div class="map-stat">
+
+                        <span>
+                            Center
+                        </span>
+
+                        <strong id="mapCenterDisplay">
+                            Waiting for GPS
+                        </strong>
+
+                    </div>
+
+                    <div class="map-stat">
+
+                        <span>
+                            Love's Stops
+                        </span>
+
+                        <strong id="lovesCountDisplay">
+                            Loading
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </div>
 
 <!-- LEAFLET JS -->
@@ -305,7 +414,10 @@
 
 <!-- APP JS -->
 
-<script src="js/app.js"></script>
+<script
+    type="module"
+    src="js/app.js"
+></script>
 
 </body>
 </html>
