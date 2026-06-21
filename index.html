@@ -299,104 +299,12 @@
 
         <section class="map-section" id="mapSection">
 
-            <div class="map-shell">
-
-                <div class="map-header">
-
-                    <div class="map-title">
-
-                        <img
-                            src="icons/map.svg"
-                            alt=""
-                        >
-
-                        <div>
-                            <strong>
-                                Ag Exemption Map
-                            </strong>
-
-                            <span>
-                                150 air-mile planning radius
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <div class="map-actions">
-
-                        <button
-                            id="installBtn"
-                            class="secondary-btn install-btn"
-                            type="button"
-                            hidden
-                        >
-
-                            <span>
-                                Install App
-                            </span>
-
-                        </button>
-
-                        <button
-                            class="secondary-btn"
-                            type="button"
-                            onclick="window.AgRadiusPro && window.AgRadiusPro.locateUser && window.AgRadiusPro.locateUser()"
-                        >
-
-                            <span>
-                                Use GPS
-                            </span>
-
-                        </button>
-
-                    </div>
-
-                </div>
+            <div class="map-shell clean-map-shell">
 
                 <div
                     id="map"
                     aria-label="AgRadius Pro Interactive Map"
                 ></div>
-
-                <div class="map-overlay">
-
-                    <div class="map-stat">
-
-                        <span>
-                            Radius
-                        </span>
-
-                        <strong>
-                            150 Air Miles
-                        </strong>
-
-                    </div>
-
-                    <div class="map-stat">
-
-                        <span>
-                            Center
-                        </span>
-
-                        <strong id="mapCenterDisplay">
-                            Waiting for GPS
-                        </strong>
-
-                    </div>
-
-                    <div class="map-stat">
-
-                        <span>
-                            Love's Stops
-                        </span>
-
-                        <strong id="lovesCountDisplay">
-                            Loading
-                        </strong>
-
-                    </div>
-
-                </div>
 
             </div>
 
