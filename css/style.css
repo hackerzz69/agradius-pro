@@ -1,1 +1,35 @@
+:root{
+    --bg:#020817;
+    --panel:#071329;
+    --text:#f8fafc;
+    --accent:#37F5D6;
+}
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,Roboto,Arial,sans-serif;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button{
+    font:inherit;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
